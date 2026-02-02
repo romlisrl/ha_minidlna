@@ -32,5 +32,5 @@ FRIENDLY_NAME=$(bashio::config 'friendly_name')
 sed -i "s/%%friendly_name%%/${FRIENDLY_NAME}/g" /etc/minidlna.conf
 
 OPTIONS="$(bashio::config 'options')"
-bashio::log.info "Starting MiniDLNA..."
+bashio::log.info "Starting MiniDLNA: ${FRIENDLY_NAME}..."
 usr/sbin/minidlnad $OPTIONS
