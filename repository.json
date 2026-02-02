@@ -1,5 +1,5 @@
 {
-"name": "MiniDLNA", 
+"name": "Home Assistant Add-on: MiniDLNA", 
 "url": "https://github.com/romlisrl/ha_minidlna",
 "maintainer": "Rom Lis <romlis.rl@gmail.com>"
 }
