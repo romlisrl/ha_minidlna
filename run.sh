@@ -25,6 +25,12 @@ done
 
 sed -i "s/%%port%%/${ingress_port}/g" /etc/minidlna.conf
 
+FRIENDLY_NAME=$(bashio::config 'friendly_name')
+
+# Заменяем плейсхолдер в конфиге на реальное значение
+# Если в конфиге строка "friendly_name=XXXnameXXX", используем:
+sed -i "s/XXXfriendly_nameXXX/${FRIENDLY_NAME}/g" /etc/minidlna.conf
+
 OPTIONS="$(bashio::config 'options')"
 bashio::log.info "Starting MiniDLNA..."
 usr/sbin/minidlnad $OPTIONS
