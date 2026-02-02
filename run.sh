@@ -20,15 +20,13 @@ do
     echo "> setting media dir: [media_dir=$dir]"
 	sed -i "/XXXmedia_dirXXX/a \media_dir=$dir" /etc/minidlna.conf
 done
-#MEDIA_DIR2="$(bashio::config 'media_dir2')"
-#sed -i "s%XXXmedia_dir2XXX%$MEDIA_DIR2%g" /etc/minidlna.conf
 
 sed -i "s/%%port%%/${ingress_port}/g" /etc/minidlna.conf
 
 FRIENDLY_NAME=$(bashio::config 'friendly_name')
 
-# Заменяем плейсхолдер в конфиге на реальное значение
-# Если в конфиге строка "friendly_name=XXXnameXXX", используем:
+# Configure: friendly_name
+
 sed -i "s/%%friendly_name%%/${FRIENDLY_NAME}/g" /etc/minidlna.conf
 
 OPTIONS="$(bashio::config 'options')"
