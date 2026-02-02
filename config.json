@@ -21,10 +21,12 @@
     "init": false,	
     "options": {
       "media_dir": "/media;/share",
+	  "friendly_name": "My Home Media",
 	  "options": "-d"
     },
     "schema": {
       "media_dir": "str",
+	  "friendly_name": "str",
 	  "options": "str"
     },
         "ingress_port": 9998,
