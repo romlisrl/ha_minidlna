@@ -2,7 +2,7 @@
     "name": "MiniDLNA",
     "version": "0.5.2",
     "slug": "minidlna",
-    "description": "MiniDLNA 1.3.3 for hass.io",
+    "description": "MiniDLNA server for hass.io (1.3.3)",
     "url": "https://github.com/romlisrl/ha_minidlna",
     "startup": "services",
     "boot": "auto",
