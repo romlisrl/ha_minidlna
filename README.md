@@ -5,7 +5,7 @@ This addon provide a container for hass.io with MiniDLNA
 
 ## Installation
 
-Copy the url of this addon into **Settings** -> **Add-ons** -> **Add-on store** -> **3 dots** -> **Repositories** -> **Add**, then install it. 
+Add the [url](https://github.com/romlisrl/ha_minidlna) into **Settings** -> **Add-ons** -> **Add-on store** -> **3 dots** -> **Repositories** -> **Add**, then install it. 
 
 
 ## Configuration 
