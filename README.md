@@ -10,6 +10,7 @@ Copy the url of this addon into "Supervisor" -> "Addon Store" -> "Add New reposi
 
 ## Configuration 
 ```yaml
+friendly_name: My Home Media
 media_dir: V,/media;/share
 options: -d
 ```
