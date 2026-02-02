@@ -1,14 +1,6 @@
 {
-
- 
-"name": "MiniDLNA",
-
- 
+"name": "MiniDLNA", 
 "url": "https://github.com/romlisrl/ha_minidlna",
-
- 
 "maintainer": "Rom Lis <romlis.rl@gmail.com>"
-
- 
 }
 
