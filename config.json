@@ -2,7 +2,7 @@
     "name": "Minidlna",
     "version": "0.5.2",
     "slug": "minidlna",
-    "description": "MiniDLNA",
+    "description": "This addon provide a container for hass.io with MiniDLNA",
     "url": "https://github.com/romlisrl/ha_minidlna",
     "startup": "services",
     "boot": "auto",
