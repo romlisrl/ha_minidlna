@@ -4,8 +4,6 @@
 
 This add-on allows you to run a DLNA/UPnP media server directly inside Home Assistant OS using the Supervisor add-on system. It serves media files from your configured folders to DLNA-compatible devices such as Smart TVs, media players, and consoles.
 
-It is based on [MiniDLNA](https://minidlna.sourceforge.net/) (also known as ReadyMedia), a lightweight and efficient media server.
-
 ---
 
 ### 📌 What This Add-on Does
@@ -118,5 +116,5 @@ No Home Assistant integration is required — this is a standalone DLNA server.
 ---
 
 #### 📜 License
-Based on MiniDLNA (ReadyMedia).
+Based on [MiniDLNA](https://minidlna.sourceforge.net/) (ReadyMedia).
 See LICENSE file for details.
