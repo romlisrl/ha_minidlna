@@ -1,3 +1,4 @@
+[![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/romlis)
 ## Home Assistant OS MiniDLNA Add-on
 
 #### MiniDLNA (ReadyMedia) server for Home Assistant OS
