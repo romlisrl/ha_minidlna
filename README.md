@@ -6,7 +6,9 @@ This add-on allows you to run a DLNA/UPnP media server directly inside Home Assi
 
 It is based on [MiniDLNA](https://minidlna.sourceforge.net/) (also known as ReadyMedia), a lightweight and efficient media server.
 
-#### 📌 What This Add-on Does
+---
+
+### 📌 What This Add-on Does
 
 - Runs MiniDLNA inside Home Assistant OS
 - Shares audio, video, and photo folders over DLNA
@@ -15,17 +17,27 @@ It is based on [MiniDLNA](https://minidlna.sourceforge.net/) (also known as Read
 
 This add-on is intended only for Home Assistant OS / Supervised installations.
 
-#### 🚀 Installation
+---
+
+### 🚀 Installation
 
 **1.** Open **Home Assistant**
+
 **2.** Go to **Settings → Add-ons → Add-on Store**
+
 **3.** Click ⋮ **(top right) → Repositories**
+
 **4.** Add this repository URL
+
 **5.** Install **MiniDLNA Add-on**
+
 **6.** Start the add-on
+
 **7.** (Optional) Enable **Start on boot** and **Watchdog**
 
-#### ⚙️ Configuration
+---
+
+### ⚙️ Configuration
 
 Example configuration:
 ```
@@ -33,6 +45,9 @@ media_dir: A,/media/music;V,/media/video;P,/media/pictures
 options: ""
 friendly_name: "Home Assistant DLNA"
 ```
+
+---
+
 `media_dir`
 
 Defines which directories will be scanned and shared.
@@ -56,6 +71,8 @@ You can use:
 - `/share` – Shared folder
 - External mounted drives (if mounted in HA OS)
 
+---
+
 `options`
 
 Optional additional MiniDLNA flags.
@@ -70,7 +87,9 @@ Examples:
 
 Sets how the DLNA server appears on your network.
 
-#### 🌐 Network Behavior
+---
+
+### 🌐 Network Behavior
 
 After starting:
 - MiniDLNA scans configured folders
@@ -79,18 +98,24 @@ After starting:
 
 No Home Assistant integration is required — this is a standalone DLNA server.
 
-#### 🛠 Tips
+---
+
+### 🛠 Tips
 
 - Ensure your media folders contain supported formats
 - Large libraries may take time during first scan
 - If media does not appear, restart the add-on or use -R option
 - Make sure your TV/device is on the same subnet
 
+---
+
 #### 🧱 Requirements
 
 - Home Assistant OS or Supervised installation
 - Supervisor enabled
 - Local network with DLNA-capable clients
+
+---
 
 #### 📜 License
 Based on MiniDLNA (ReadyMedia).
