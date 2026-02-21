@@ -1,50 +1,97 @@
-## MiniDLNA for hass.io
-## Description
+## Home Assistant OS MiniDLNA Add-on
 
-This addon provide a container for hass.io with MiniDLNA
+#### MiniDLNA (ReadyMedia) server for Home Assistant OS
 
-## Installation
+This add-on allows you to run a DLNA/UPnP media server directly inside Home Assistant OS using the Supervisor add-on system. It serves media files from your configured folders to DLNA-compatible devices such as Smart TVs, media players, and consoles.
 
-Add the https://github.com/romlisrl/ha_minidlna into **Settings** -> **Add-ons** -> **Add-on store** -> **3 dots** -> **Repositories** -> **Add**, then install it. 
+It is based on [MiniDLNA](https://minidlna.sourceforge.net/) (also known as ReadyMedia), a lightweight and efficient media server.
 
+#### 📌 What This Add-on Does
 
-## Configuration 
-```yaml
-friendly_name: My Home Media
-media_dir: V,/media;/share
-options: -d
+- Runs MiniDLNA inside Home Assistant OS
+- Shares audio, video, and photo folders over DLNA
+- Automatically advertises the server on your local network
+- Works with any DLNA/UPnP compatible client
+
+This add-on is intended only for Home Assistant OS / Supervised installations.
+
+#### 🚀 Installation
+
+**1.** Open **Home Assistant**
+**2.** Go to **Settings → Add-ons → Add-on Store**
+**3.** Click ⋮ **(top right) → Repositories**
+**4.** Add this repository URL
+**5.** Install **MiniDLNA Add-on**
+**6.** Start the add-on
+**7.** (Optional) Enable **Start on boot** and **Watchdog**
+
+#### ⚙️ Configuration
+
+Example configuration:
 ```
+media_dir: A,/media/music;V,/media/video;P,/media/pictures
+options: ""
+friendly_name: "Home Assistant DLNA"
+```
+`media_dir`
 
-### Option `media_dir`
+Defines which directories will be scanned and shared.
 
-Set this to the directory you want scanned.
-* if you want multiple directories, you can add ';' before each new directory
-  (eg. media_dir: /media;/share)
-* if you want to restrict a media_dir to specific content types, you
-  can prepend the types, followed by a comma, to the directory:
-  + "A" for audio  (eg. media_dir: A,/home/jmaggard/Music)
-  + "V" for video  (eg. media_dir: V,/home/jmaggard/Videos)
-  + "P" for images (eg. media_dir: P,/home/jmaggard/Pictures)
-  + "PV" for pictures and video (eg. media_dir:PV,/home/jmaggard/digital_camera)
+Format:
+```
+TYPE,/path;TYPE,/path
+```
+Where TYPE can be:
 
-  
-### Option `options`
-Usage:
-                [-d] [-v] [-f config_file] [-p port]
-                [-i network_interface] [-u uid_to_run_as]
-                [-t notify_interval] [-P pid_filename]
-                [-s serial] [-m model_number]
-                [-w url] [-r] [-R] [-L] [-S] [-V] [-h]
+- `A` – Audio
+- `V` – Video
+- `P` – Pictures
 
-Notes:
-        Notify interval is in seconds. Default is 895 seconds.
-        Default pid file is /var/run/minidlna/minidlna.pid.
-        With -d minidlna will run in debug mode (not daemonize).
-        -w sets the presentation url. Default is http address on port 80
-        -v enables verbose output
-        -h displays this text
-        -r forces a rescan
-        -R forces a rebuild
-        -L do not create playlists
-        -S changes behaviour for systemd
-        -V print the version number
+Example:
+```
+A,/media/music;V,/media/movies
+```
+You can use:
+- `/media` – Home Assistant media folder
+- `/share` – Shared folder
+- External mounted drives (if mounted in HA OS)
+
+`options`
+
+Optional additional MiniDLNA flags.
+
+Examples:
+
+- `-d` → debug mode
+- `-R` → force full rescan
+- `-p 8201` → custom port
+
+`friendly_name`
+
+Sets how the DLNA server appears on your network.
+
+#### 🌐 Network Behavior
+
+After starting:
+- MiniDLNA scans configured folders
+- It announces itself via UPnP
+- Devices on the same LAN will detect it automatically
+
+No Home Assistant integration is required — this is a standalone DLNA server.
+
+#### 🛠 Tips
+
+- Ensure your media folders contain supported formats
+- Large libraries may take time during first scan
+- If media does not appear, restart the add-on or use -R option
+- Make sure your TV/device is on the same subnet
+
+#### 🧱 Requirements
+
+- Home Assistant OS or Supervised installation
+- Supervisor enabled
+- Local network with DLNA-capable clients
+
+#### 📜 License
+Based on MiniDLNA (ReadyMedia).
+See LICENSE file for details.
